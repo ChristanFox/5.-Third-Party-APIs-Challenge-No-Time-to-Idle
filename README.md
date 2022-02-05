@@ -39,8 +39,8 @@ The following picture shows the web application's appearance and functionality:
 You are required to submit BOTH of the following for review:
 
 * The URL of the deployed application.
-https://christanfox.github.io/Week-4---Laker-Nation-Quiz/
+https://christanfox.github.io/5.-Third-Party-APIs-Challenge-No-Time-to-Idle/
 * The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
-https://github.com/ChristanFox/Week-4---Laker-Nation-Quiz
+https://github.com/ChristanFox/5.-Third-Party-APIs-Challenge-No-Time-to-Idle
 - - -
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
