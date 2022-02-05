@@ -18,3 +18,13 @@ $(".saveBtn").click(function() {
 
 localStorage.setItem(time, value)    
 });
+
+                          /*****************************/
+                         /*--LOAD FROM LOCAL STORAGE--*/
+                        /*****************************/
+
+$(".time-block").each(function() {
+    var timeBlock = $(this).attr("id");
+    var savedTasks = localStorage.getItem(timeBlock);
+    $(this).children(".description").val(savedTasks)
+})
