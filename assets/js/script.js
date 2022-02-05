@@ -9,14 +9,11 @@ setInterval(currentDate, 1000); // refresh rate in milliseconds
                           /***************************/
                          /*--SAVE TO LOCAL STORAGE--*/
                         /***************************/
-var hour = document.querySelector(".hour");
 
 $(".saveBtn").click(function() {
-
-    var time = $(this).parent().attr("id")
-    var value = $(this).siblings(".description").val();
-
-localStorage.setItem(time, value)    
+    var time = $(this).parent().attr("id") // sets the variable  time to be equal to the id of whatever time-box you saved the task in
+    var value = $(this).siblings(".description").val(); // sets the value to be whatever was typed into  the description box 
+localStorage.setItem(time, value)  // saves to the local starage with the time and value attached  
 });
 
                           /*****************************/
@@ -24,8 +21,8 @@ localStorage.setItem(time, value)
                         /*****************************/
 
 $(".time-block").each(function() {
-    var timeBlock = $(this).attr("id");
-    var savedTasks = localStorage.getItem(timeBlock);
+    var timeBlock = $(this).attr("id"); // lists all of the id's so that the saved items can match up with keys from the savedtasks
+    var savedTasks = localStorage.getItem(timeBlock); // pairs the key with the correct timebox id
     $(this).children(".description").val(savedTasks)
 })
 
@@ -34,12 +31,9 @@ $(".time-block").each(function() {
                         /****************************************/
 
 function colorCode() {
-
-    var currentTime = moment().hour();
-
-    $(".time-block").each(function() {
-        var blockId = parseInt($(this).attr("id"));
-
+    var currentTime = moment().hour(); //  currentTime determines which timebox is "present" based on the current time
+    $(".time-block").each(function() { // this function add's a specific class to "this/.time-block" based on whether it's in the past, present, or in the future
+        var blockId = parseInt($(this).attr("id")); 
         if (blockId > currentTime) {
             $(this).addClass("future");
         }
@@ -52,3 +46,8 @@ function colorCode() {
     })
 }
 colorCode();
+
+// links for future reference cause this **** is confusing
+// "https://api.jquery.com/parent/"
+// "https://api.jquery.com/siblings/"
+// "https://api.jquery.com/attr/"  
