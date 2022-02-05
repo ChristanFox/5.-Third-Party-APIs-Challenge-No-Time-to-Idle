@@ -28,3 +28,27 @@ $(".time-block").each(function() {
     var savedTasks = localStorage.getItem(timeBlock);
     $(this).children(".description").val(savedTasks)
 })
+
+                          /****************************************/
+                         /*--COLOR CHANGE BASED ON CURRENT TIME--*/
+                        /****************************************/
+
+function colorCode() {
+
+    var currentTime = moment().hour();
+
+    $(".time-block").each(function() {
+        var blockId = parseInt($(this).attr("id"));
+
+        if (blockId > currentTime) {
+            $(this).addClass("future");
+        }
+        else if (blockId === currentTime) {
+            $(this).addClass("present");
+        }
+        else {
+            $(this).addClass("past");
+        }            
+    })
+}
+colorCode();
